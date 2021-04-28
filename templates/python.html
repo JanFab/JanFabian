@@ -1,0 +1,37 @@
+{%extends "layout.html"%} {%block content%}
+<!-- <link rel="stylesheet" href={{cdn_css | safe}} type="text/css"/> -->
+<script type="text/javascript" src={{cdn_js | safe}}></script>
+
+<div class="python">
+    <div class="cnt-box">
+        <div class="txt-box">
+            <h1>Galéria</h1>
+            <p>Mojim najnovším projektom je práve táto stránka s backendom fičiacim na Pythone. Je postavená od základu, bez šablóny jedine s využitím knižnice Flask</p>
+        </div>
+
+        <div class="txt-box">
+            <h1>GitHub</h1>
+            <p>Aktuálne zadanie z predmetu Komponentové programovanie. Nie je ešte dokončené. Využíva však prácu s databázami a webové služby. Ináč je to príjemnáa (zatiaľ) konzolová hra.</p>
+            <p>Kliknite <a href="https://github.com/JanFab/WhatsThePicture">SEM</a> pre odkaz na GitHub.</p>
+        </div>
+
+        <div class="txt-box">
+            <h1>Zvieranie údajov z populácie o výške</h1>
+            <h3>Prosím vyplňte formulár. Aktuálny výsledok prieskumu vám príde na zadaný email.</h3>
+            <div class="mesage">{{text | safe}}</div>
+            <form action="{{url_for('success')}}" method="POST">
+                <input title="Your email will be safe with us" placeholder="Zadajte svoju emailovú adresu" type="email" name="email_name" required><br>
+                <input title="Your data will be safe with us" placeholder="Zadajte svoju výšku v cm" type="number" min="50" max="300" name="height_name" required><br>
+                <button type="submit">Potvrdiť</button>
+            </form>
+            <p>Aplikácia využíva online databázu na ukladanie údajov. Email odosiela automaticky python.</p>
+        </div>
+
+        <div class="txt-box">
+            <h1>Akcie SIEMENS</h1>
+            <p>Chrbtovou kosťou tabuľky je knižnica Pandas. Tabuľka obsahuje aktuálne údaje o každodennom vývine cien akciích © Siemens.de. Na zobrazenie využíva Bokeh</p>
+            <p>#pandysrandy</p>
+            {{script1 | safe}} {{div1 | safe}}
+        </div>
+    </div>
+</div> {%endblock%}
