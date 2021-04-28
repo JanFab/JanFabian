@@ -177,16 +177,16 @@ nav a:hover {
     background-image: url("/static/pics/blt.jpeg");
 }
 
+#OUTDOOR {
+    background-image: url("/static/pics/outdoor.jpeg");
+}
+
 #TABOR {
     background-image: url("/static/pics/tabor.jpg");
 }
 
 #PHOTO {
     background-image: url("/static/pics/photo.jpeg");
-}
-
-#OUTDOOR {
-    background-image: url("/static/pics/outdoor.jpeg");
 }
 
 form {
