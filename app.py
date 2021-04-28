@@ -86,6 +86,7 @@ def hobbies():
 def school():
     return render_template("school.html")
 
+
 @app.route("/success/", methods=['POST'])
 def success():
     if request.method == 'POST':
