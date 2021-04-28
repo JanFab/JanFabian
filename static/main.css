@@ -258,7 +258,7 @@ footer {
 
 /*  */
 
-@media all and (max-width: 1082px) {
+@media screen and (max-width: 1200px) {
     .header_container {
         flex-flow: column wrap;
     }
