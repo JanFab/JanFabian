@@ -32,7 +32,7 @@ def python():
 
     start = datetime.date.today() - datetime.timedelta(days=90)
     end = datetime.date.today()
-    df = data.DataReader(name="SIE.DE", data_source="yahoo",
+    df = data.DataReader(name="TEAM", data_source="yahoo",
                          start=start, end=end)
 
     date_decrease = df.index[df.Close > df.Open]
@@ -53,7 +53,7 @@ def python():
 
     p = figure(x_axis_type='datetime', width=1000,
                height=300, sizing_mode="scale_width")
-    p.title.text = "Siemens, cena akcií v dňoch v USD"
+    p.title.text = "Atlassian, cena akcií v dňoch v USD"
     p.grid.grid_line_alpha = 0.3
 
     hours_12 = 12*60*60*1000
