@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from send_email import send_email
 from sqlalchemy.sql import func
 
+import yfinance as yf
+
 app=Flask(__name__)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/height_collector'
@@ -24,7 +26,7 @@ class Data(db.Model):
 
 @app.route('/python/')
 def python():
-    from pandas_datareader import data
+    from pandas_datareader import data as pdr
     import datetime
     from bokeh.plotting import figure, show, output_file
     from bokeh.embed import components
@@ -32,8 +34,8 @@ def python():
 
     start = datetime.date.today() - datetime.timedelta(days=90)
     end = datetime.date.today()
-    df = data.DataReader(name="TEAM", data_source="yahoo",
-                         start=start, end=end)
+    yf.pdr_override()
+    df = pdr.get_data_yahoo("SPY", start, end)
 
     date_decrease = df.index[df.Close > df.Open]
     date_increase = df.index[df.Close < df.Open]
