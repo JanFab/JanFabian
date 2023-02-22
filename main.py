@@ -4,8 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 from send_email import send_email
 from sqlalchemy.sql import func
 
-import yfinance as yf
-
 app=Flask(__name__)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/height_collector'
@@ -18,7 +16,7 @@ class Data(db.Model):
     id=db.Column(db.Integer, primary_key=True)
     email_=db.Column(db.String(120), unique=True)
     height_=db.Column(db.Integer)
-    
+
     def __init__(self, email_, height_):
         self.email_ = email_
         self.height_ = height_
@@ -26,7 +24,7 @@ class Data(db.Model):
 
 @app.route('/python/')
 def python():
-    from pandas_datareader import data as pdr
+    from pandas_datareader import data
     import datetime
     from bokeh.plotting import figure, show, output_file
     from bokeh.embed import components
@@ -34,8 +32,8 @@ def python():
 
     start = datetime.date.today() - datetime.timedelta(days=90)
     end = datetime.date.today()
-    yf.pdr_override()
-    df = pdr.get_data_yahoo("SPY", start, end)
+    df = data.DataReader(name="SIE.DE", data_source="yahoo",
+                         start=start, end=end)
 
     date_decrease = df.index[df.Close > df.Open]
     date_increase = df.index[df.Close < df.Open]
@@ -55,7 +53,7 @@ def python():
 
     p = figure(x_axis_type='datetime', width=1000,
                height=300, sizing_mode="scale_width")
-    p.title.text = "Atlassian, cena akcií v dňoch v USD"
+    p.title.text = "Siemens, cena akcií v dňoch v USD"
     p.grid.grid_line_alpha = 0.3
 
     hours_12 = 12*60*60*1000
@@ -88,13 +86,12 @@ def hobbies():
 def school():
     return render_template("school.html")
 
-
 @app.route("/success/", methods=['POST'])
 def success():
     if request.method == 'POST':
         email=request.form["email_name"]
         height=request.form["height_name"]
-        
+
         if db.session.query(Data).filter(Data.email_==email).count() == 0:
             data=Data(email, height)
             db.session.add(data)
