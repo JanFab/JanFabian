@@ -55,6 +55,10 @@
     background-image: url("/static/pics/mmdf.png");
 }
 
+#WEB {
+    background-image: url("/static/pics/web.png");
+}
+
 /* Body */
 
 body {
