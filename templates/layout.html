@@ -3,16 +3,16 @@
 
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="shortcut icon" href="../static/pics/ttle.png" type="image/png">
+    <link rel="shortcut icon" href="../static/pics/j.png" type="image/png">
     <title>Ján Fabian</title>
-    <link rel="stylesheet" href="{{(url_for('static', filename='main.css'))}}">
+    <link rel="stylesheet" href="{{(url_for('static', filename='style.css'))}}">
 </head>
 
 <body>
     <header>
         <div class="header_container">
             <div class="logoWrap">
-                <h1 class="logo">Ján Fabian</h1>
+                <a id="logo" href="{{url_for('home')}}">Ján Fabian</a>
                 <div class="containerBars" onclick="myFunction(this)">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
@@ -21,21 +21,23 @@
             </div>
             <div class="menu change">
                 <nav>
-                    <a href="{{url_for('home')}}">Home</a>
-                    <a href="{{url_for('school')}}">Experiences</a>
+                    <!-- <a href="{{url_for('home')}}">Home</a> -->
+                    <a href="{{url_for('experience')}}">Experience</a>
                     <a href="{{url_for('hobbies')}}">Hobbies</a>
-                    <a href="{{url_for('python')}}">Gallery</a>
+                    <a href="{{url_for('gallery')}}">Gallery</a>
                 </nav>
             </div>
         </div>
     </header>
+    
     <div class="container">
         {%block content%} {%endblock%}
     </div>
+
     <footer>
-        <div class="ftr"><a href="{{url_for('home')}}">Domov</a></div>
-        <div class="ftr">Jan Fabian 2021</div>
-        <div class="ftr"><a href="mailto:janco.fabo@gmail.com">janco.fabo@gmail.com</a></div>
+        <div class="footer-item"><a href="{{url_for('home')}}">Home</a></div>
+        <div class="footer-item">Ján Fabian 2021-2023</div>
+        <div class="footer-item"><a href="mailto:janco.fabo@gmail.com">janco.fabo@gmail.com</a></div>
     </footer>
 
     <script>

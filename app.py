@@ -24,8 +24,8 @@ class Data(db.Model):
         self.height_ = height_
 
 
-@app.route('/python/')
-def python():
+@app.route('/gallery/')
+def gallery():
     from pandas_datareader import data as pdr
     import datetime
     from bokeh.plotting import figure, show, output_file
@@ -70,7 +70,7 @@ def python():
     cdn_js = CDN.js_files[0]
     # cdn_css = CDN.css_files[0]
 
-    return render_template("python.html",
+    return render_template("gallery.html",
     script1 = script1,
     div1 = div1,
     # cdn_css = cdn_css,
@@ -84,9 +84,9 @@ def home():
 def hobbies():
     return render_template("hobbies.html")
 
-@app.route("/school/")
-def school():
-    return render_template("school.html")
+@app.route('/experience/')
+def experience():
+    return render_template("experience.html")
 
 
 @app.route("/success/", methods=['POST'])
@@ -105,7 +105,7 @@ def success():
             send_email(email, height, average_height, count)
             return render_template("success.html")
         else:
-            return render_template('python.html', text="Seems like we've got something from that email address already!")
+            return render_template('experiences.html', text="Seems like we've got something from that email address already!")
 
 if __name__ == "__main__":
     # app.debug=True
