@@ -1,65 +1,106 @@
-/* Images */
-
-#FEI {
-    background-image: url("/static/pics/fei.jpeg");
+/*
+Images
+*/
+/* Home */
+#PROFILE {
+    background-image: url("/static/pics/home/profile.JPG");
 }
 
+/* Experience */
+
 #SIEMENS {
-    background-image: url("/static/pics/siemens.png");
+    background-image: url("/static/pics/experience/siemens.png");
 }
 
 #GTA {
-    background-image: url("/static/pics/GTA.jpeg");
+    background-image: url("/static/pics/experience/GTA.jpeg");
 }
 
 #SCOUT {
-    background-image: url("/static/pics/sct.jpeg");
+    background-image: url("/static/pics/experience/sct.jpeg");
 }
 
 #BOLT {
-    background-image: url("/static/pics/blt.jpeg");
-}
-
-#OUTDOOR {
-    background-image: url("/static/pics/out.jpeg");
-}
-
-#TABOR {
-    background-image: url("/static/pics/tabor.jpg");
+    background-image: url("/static/pics/experience/blt.jpeg");
 }
 
 #CAMP {
-    background-image: url("/static/pics/camp.JPG");
+    background-image: url("/static/pics/experience/camp.JPG");
 }
 
-#PHOTO {
-    background-image: url("/static/pics/photo.jpeg");
-}
 #GRAD {
-    background-image: url("/static/pics/grad.JPG");
+    background-image: url("/static/pics/experience/grad.JPG");
 }
 
 #OULU {
-    background-image: url("/static/pics/oulu.JPG");
+    background-image: url("/static/pics/experience/oulu.JPG");
 }
 
-#PROFILE {
-    background-image: url("/static/pics/profile.JPG");
+#VLS {
+    background-image: url("/static/pics/experience/vls.jpeg");
 }
+
+/* Hobbies */
+
+#OUTDOOR {
+    background-image: url("/static/pics/hobbies/out.jpeg");
+}
+
+#TABOR {
+    background-image: url("/static/pics/hobbies/tabor.jpg");
+}
+
+#PHOTO {
+    background-image: url("/static/pics/hobbies/photo.jpeg");
+}
+
+#CLIMB {
+    background-image: url("/static/pics/hobbies/climb.JPG");
+}
+
+#BREITHORN {
+    background-image: url("/static/pics/hobbies/breithorn.JPG");
+}
+
+#SWEDEN {
+    background-image: url("/static/pics/hobbies/sweden.JPG");
+}
+
+#HAILUOTO {
+    background-image: url("/static/pics/hobbies/hailuoto.JPG");
+}
+
+#LIBRARY {
+    background-image: url("/static/pics/hobbies/lib.JPG");
+}
+
+#BLOOD {
+    background-image: url("/static/pics/hobbies/blood.jpg");
+}
+
+/* Gallery */
 
 #ANIME {
-    background-image: url("/static/pics/anime.png");
+    background-image: url("/static/pics/gallery/anime.png");
 }
 
 #MMDF {
-    background-image: url("/static/pics/mmdf.png");
+    background-image: url("/static/pics/gallery/mmdf.png");
 }
 
 #WEB {
-    background-image: url("/static/pics/web.png");
+    background-image: url("/static/pics/gallery/web.png");
 }
 
-/* Body */
+#AC {
+    background-image: url("/static/pics/gallery/affective_computing.png");
+}
+
+#SPRING {
+    background-image: url("/static/pics/gallery/spring.png");
+}
+
+/* Body formatting */
 
 body {
     display: flex;
@@ -67,13 +108,150 @@ body {
     align-content: flex-start;
     margin: 0;
     padding: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
+    /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+}
+
+.container {
+    color: blanchedalmond;
+    position: absolute;
+    padding-top: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+
+    width: 96%;
+    margin: auto;
+}
+
+.home {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.main-img-box {
+    display: block;
+    width: 60%;
+    background-image: url("/static/pics/profile.JPG");
+    background-position: center;
+    background-size: cover;
+}
+
+.main-txt-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(58, 58, 58);
+    color: white;
+    width: 40%;
+    height: 90vh;
+
+}
+
+.main-txt-box * {
+    padding: 2em;
+}
+
+.chapter-header {
+    background-color: rgb(38, 38, 38);
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.chapter-item-container {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    margin-bottom: 1em;
+}
+
+.txt-box a {
+    text-decoration: none;
+    color: coral;
+    font-weight: bold;
+}
+
+.img-box {
+    display: block;
+    width: 30%;
+    background-position: center;
+    background-size: cover;
+}
+
+.txt-box {
+    display: block;
+    background-color: rgb(58, 58, 58);
+    width: 68%;
+    height: auto;
+    align-items: center;
+    padding: 1%;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    width: 350px;
+    height: 15px;
+    font-size: 15px;
+    margin: 2px;
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+button {
+    width: 70px;
+    height: 30px;
+    background-color: rgb(0, 176, 0);
+    margin: 3px;
+}
+
+.message {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #ff9999;
+}
+
+.chapter-header h1 {
+    font-size: 3em;
+    padding: 1px;
+    color: white;
+}
+
+.chapter-header p {
+    color: blanchedalmond;
+}
+
+.main-txt-box h1 {
+    font-size: 2em;
+    letter-spacing: -1px;
+    color: white;
+}
+
+.main-txt-box h2 {
+    font-size: 4em;
+    text-align: center;
+    letter-spacing: -2px;
+    color: white;
+}
+
+.main-txt-box p {
+}
+
+.txt-box h3 {
+    font-size: 1.9em;
+    font-weight: 50;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: -1px;
+    color: white;
 }
 
 /*
  * Formatting the header area
  */
-
 header {
     /* display: block; */
     position: fixed;
@@ -171,134 +349,6 @@ footer {
     text-decoration: none;
 }
 
-
-/*
- * Center the body content
- */
-
-.container {
-    color: blanchedalmond;
-    position: absolute;
-    padding-top: 4%;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-bottom: 2%;
-
-    width: 96%;
-    margin: auto;
-}
-
-.main-imtx-box {
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.main-img-box {
-    display: block;
-    width: 60%;
-    background-image: url("/static/pics/profile.JPG");
-    background-position: center;
-    background-size: cover;
-}
-
-.main-txt-box {
-    display: block;
-    background-color: rgb(58, 58, 58);
-    color: white;
-    width: 40%;
-    height: 90vh;
-    align-items: center;
-}
-
-.main-txt-box * {
-    padding: 2em;
-}
-
-.chapter-header {
-    background-color: black;
-    padding: 1em;
-    margin-bottom: 1em;
-}
-
-.chapter-item-container {
-    display: flex;
-    flex-flow: row wrap;
-    height: 100%;
-    margin-bottom: 1em;
-}
-
-.txt-box a {
-    text-decoration: none;
-    color: coral;
-    font-weight: bold;
-}
-
-.img-box {
-    display: block;
-    width: 30%;
-    background-position: center;
-    background-size: cover;
-}
-
-.txt-box {
-    display: block;
-    background-color: rgb(58, 58, 58);
-    width: 68%;
-    height: auto;
-    align-items: center;
-    padding: 1%;
-}
-
-form {
-    text-align: center;
-}
-
-input {
-    width: 350px;
-    height: 15px;
-    font-size: 15px;
-    margin: 2px;
-    padding: 20px;
-    transition: all 0.2s ease-in-out;
-}
-
-button {
-    width: 70px;
-    height: 30px;
-    background-color: rgb(0, 176, 0);
-    margin: 3px;
-}
-
-.message {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    color: #ff9999;
-}
-
-h1 {
-    font-size: 3em;
-    padding: 1px;
-    color: white;
-}
-
-h2 {
-    font-size: 3em;
-    margin-top: 40px;
-    padding: 1px;
-    text-align: center;
-    letter-spacing: -2px;
-    color: white;
-}
-
-h3 {
-    font-size: 1.9em;
-    font-weight: 50;
-    margin-top: 30px;
-    text-align: center;
-    letter-spacing: -1px;
-    color: white;
-}
-
 /* Mobile layout */
 
 @media screen and (max-width: 810px) {
@@ -356,6 +406,7 @@ h3 {
         flex-flow: column wrap;
         padding: 0;
         align-items: center;
+        background-color: rgb(58, 58, 58);
         transition: 0.4s;
     }
 
@@ -387,7 +438,7 @@ h3 {
     .txt-box {
         width: 100%;
         height: auto;
-        padding: 0;
+        padding: 4px;
     }
 
     .main-img-box,

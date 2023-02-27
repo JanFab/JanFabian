@@ -35,7 +35,7 @@ def gallery():
     start = datetime.date.today() - datetime.timedelta(days=90)
     end = datetime.date.today()
     yf.pdr_override()
-    df = pdr.get_data_yahoo("SPY", start, end)
+    df = pdr.get_data_yahoo("^GSPC", start, end)
 
     date_decrease = df.index[df.Close > df.Open]
     date_increase = df.index[df.Close < df.Open]
@@ -55,7 +55,7 @@ def gallery():
 
     p = figure(x_axis_type='datetime', width=1000,
                height=300, sizing_mode="scale_width")
-    p.title.text = "Atlassian, cena akcií v dňoch v USD"
+    p.title.text = "S&P 500 in USD in the recent 90 days"
     p.grid.grid_line_alpha = 0.3
 
     hours_12 = 12*60*60*1000
